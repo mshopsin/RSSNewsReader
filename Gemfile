@@ -24,7 +24,7 @@ end
 
 gem 'jquery-rails'
 gem 'simple-rss'
-gem 'backbone-rails'
+#gem 'backbone-rails'
 gem 'ejs'
 
 # To use ActiveModel has_secure_password

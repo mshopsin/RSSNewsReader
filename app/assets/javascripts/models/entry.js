@@ -1,4 +1,4 @@
-NR.Models.Entry = Backbone.Model.extend({
+NR.Models.Entry = Backbone.RelationalModel.extend({
   urlRoot: "/entries"
 
 });

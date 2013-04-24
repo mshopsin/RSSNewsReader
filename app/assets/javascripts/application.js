@@ -12,7 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require backbone-rails
+//
+//= require underscore
+//= require backbone
+//= require backbone-relational
+//
 //= require news_reader
 //= require_tree ./models
 //= require_tree ./collections

@@ -19,16 +19,16 @@ NR.Routers.FeedRouter = Backbone.Router.extend({
     console.log(id);
     var that = this;
     var feed = NR.Store.Feeds.get(id);
-    var feedEntries = new NR.Collections.Entries({ feedId: id });
-   // feedEntries.fetch({
-      //success: function () {
-        var entryView = new NR.Views.EntriesIndexView({
-          collection : NR.Store.Entries({ feedId: id });
-        });
-        that.$body.append(entryView.render().$el);
-   //   }
+    //.where([{ feed_id: id }])
 
- //   });
+    var entries = feed.get("entries");
+
+    var entryView = new NR.Views.EntriesIndexView({
+     collection : entries
+    });
+
+    that.$body.html(entryView.render().$el);
+
 
 
 
