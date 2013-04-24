@@ -1,0 +1,14 @@
+<h1><em>Fix this title later</em></h1>
+
+<ul id="entry_index">
+  <% entries.each( function (entry) { %>
+    <li class='feed_title'>
+      <a href="<%= entry.escape("link") %>" >
+        <%= entry.escape("title") %>
+      </a>
+      <p>
+        <%= entry.escape("description") %>
+      </p>
+    </li>
+  <% }); %>
+</ul>

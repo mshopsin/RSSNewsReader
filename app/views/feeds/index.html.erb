@@ -1,0 +1,21 @@
+<div class="container">
+
+  <div class="sidebar"></div>
+
+  <div class="body"></div>
+
+</div>
+
+<script type='text/javascript'>
+  $(function () {
+    var feedsData = <%= Feed.all.to_json.html_safe %>;
+    <% Feed.fetch_all_entries %>
+    var entriesData = <%= Entry.all.to_json.html_safe %>;
+    window.NR.initialize(
+      $('.sidebar'),
+      $('.body'),
+      feedsData,
+      entriesData
+    );
+  });
+</script>
