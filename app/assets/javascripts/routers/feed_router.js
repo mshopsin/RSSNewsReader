@@ -1,6 +1,7 @@
 NR.Routers.FeedRouter = Backbone.Router.extend({
   routes: {
     "": "index",
+    "feeds/new" : "newFeed",
     "feeds/:id/entries": "showEntries"
   },
 
@@ -13,6 +14,16 @@ NR.Routers.FeedRouter = Backbone.Router.extend({
     var that = this;
     that.$body.empty();
 
+  },
+
+  newFeed: function() {
+    var that = this;
+
+    var newFeedView = new NR.Views.NewFeedView({
+      collection: NR.Store.Feeds,
+      model: new NR.Models.Feed()
+    });
+    that.$body.html(newFeedView.render().$el);
   },
 
   showEntries: function(id) {

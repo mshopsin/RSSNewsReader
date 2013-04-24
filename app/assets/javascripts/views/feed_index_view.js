@@ -3,6 +3,11 @@ NR.Views.FeedIndexView = Backbone.View.extend({
   initialize: function() {
     var that = this;
 
+    var renderCallBack = that.render.bind(that);
+    that.collection.on("add", renderCallBack);
+    that.collection.on("change", renderCallBack);
+    that.collection.on("remove", renderCallBack);
+
   },
 
   render: function() {
